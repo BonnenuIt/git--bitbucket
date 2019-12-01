@@ -1,0 +1,77 @@
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try
+$ ssh-agent bash
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try
+$ ssh-add /c/Users/xyg/.ssh/bitbucket/id_rsa
+Identity added: /c/Users/xyg/.ssh/bitbucket/id_rsa (/c/Users/xyg/.ssh/bitbucket/id_rsa)
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try
+$ ssh -T git@bitbucket.org
+logged in as BonnenuIt
+
+You can use git or hg to connect to Bitbucket. Shell access is disabled
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try
+$ git clone git@bitbucket.org:BonnenuIt/try.git
+Cloning into 'try'...
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 9 (delta 2), reused 0 (delta 0)
+Receiving objects: 100% (9/9), done.
+Resolving deltas: 100% (2/2), done.
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try
+$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try
+$ ls -a
+.  ..  try
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try
+$ cd try
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try/try (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   "bitbucket ssh\345\257\206\351\222\245\351\205\215\347\275\256.txt"
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try/try (master)
+$ git add .
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try/try (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   "bitbucket ssh\345\257\206\351\222\245\351\205\215\347\275\256.txt"
+
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try/try (master)
+$ git commit -m 'version 22'
+[master ed37979] version 22
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+xyg@LAPTOP-TS0OOMKU MINGW64 /e/bitbucket/try/try (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 12 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 337 bytes | 67.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To bitbucket.org:BonnenuIt/try.git
+   f066873..ed37979  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+注意在bitbucket文件夹中需要push的文件夹名字不可与bitbucket中的文件夹不同

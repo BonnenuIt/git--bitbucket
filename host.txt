@@ -1,0 +1,7 @@
+Host bitbucket.org
+    HostName bitbucket.org
+    IdentityFile ~/.ssh/bitbucket/id_rsa
+    User git
+
+
+添加在/.ssh/文件夹中，保存为config文件，没有后缀名
